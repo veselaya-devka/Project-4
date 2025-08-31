@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "georgia";
+  font-family: "Georgia";
   src: url("../fonts/georgia.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -52,6 +52,7 @@
   --font-family-600: "Lato-SemiBold", sans-serif;
   --second-family: "Georgia", sans-serif;
   --third-family: "Avenir", sans-serif;
+  --primary: #01996d
 }
 
 
@@ -64,4 +65,142 @@ html {
   margin: 0;
   padding: 0;
   transition: .5s all;
+  font-family: var(--font-family);
+}
+
+a {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  color: #292929;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+button {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  padding: 13px 50px;
+  /* width: 183px;
+  height: 51px; */
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  text-shadow: 0 0 25px white;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+}
+
+.header {
+  border: 1px solid #d6d6d6;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.header_block {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 85px;
+}
+
+.header_block>* {
+  height: inherit;
+}
+
+.header_block>ul {
+  display: flex;
+  /* padding-right: 110px;
+  gap: 71px; */
+  /* padding-right: 323px; */
+  padding-right: 23.6%;
+  gap: 21%;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  gap: 35px;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    width: 1100px !important;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 90% !important;
+  }
+
+  button {
+    padding: 13px;
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .header_block>ul {
+    gap: 15%;
+  }
+}
+
+@media screen and (max-width: 691px) {
+  .header_block {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-right: 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    justify-content: center;
+    width: 100vw;
+    margin: 0;
+  }
+
+  .header_block>ul {
+    width: 100vw;
+    padding-right: 0;
+    gap: 0;
+    justify-content: space-between;
+    padding: 0 3%;
+  }
 }
